@@ -1,14 +1,29 @@
-window.addEventListener("load", function () {
-    console.log("VG FRAGRANCE Loaded");
+let images = [
+"IMG_1130.jpeg",
+"combo2.jpg",
+"combo3.jpg"
+];
 
-    const cards = document.querySelectorAll(".card");
+let current = 0;
 
-    cards.forEach((card) => {
-        card.addEventListener("click", () => {
-            card.style.transform = "scale(1.03)";
-            setTimeout(() => {
-                card.style.transform = "";
-            }, 200);
-        });
-    });
-});
+function changeImage(){
+
+let hero = document.getElementById("comboSlider");
+
+if(hero){
+
+current++;
+
+if(current >= images.length){
+
+current = 0;
+
+}
+
+hero.src = images[current];
+
+}
+
+}
+
+setInterval(changeImage,2500);
